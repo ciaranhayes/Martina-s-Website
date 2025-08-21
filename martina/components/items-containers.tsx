@@ -1,3 +1,4 @@
+import Link from "next/link"
 const posts = [
     {
         id: 1,
@@ -77,10 +78,10 @@ export default function ContentContainer() {
                         <article key={post.id} className="flex max-w-xl flex-col items-start justify-between border-l border-[#8A2BE2] p-5">
                             <div className="group relative grow">
                                 <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                                    <a href={post.href}>
+                                    <Link href={post.href}>
                                         <span className="absolute inset-0" />
                                         {post.title}
-                                    </a>
+                                    </Link>
                                 </h3>
                                 <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600">{post.description}</p>
                             </div>

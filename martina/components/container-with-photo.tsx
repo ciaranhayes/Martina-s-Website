@@ -20,27 +20,41 @@ const posts = [
     }
 ]
 
-export default function ContentContainerWithPhoto({ url, alt }: { url: string; alt: string }) {
+export default function ContentContainerWithPhotoLeft({ url, alt }: { url: string; alt: string }) {
     return (
         <div className="text-[#292842]">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 gap-4">
-                    {posts.map((post) => (
-                        <article key={post.id} className="flex max-w-xl flex-col items-start justify-between border-l border-[#8A2BE2] p-5">
-                            <div className="group relative grow">
-                                <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                                    <Link href={post.href}>
-                                        <span className="absolute inset-0" />
-                                        {post.title}
-                                    </Link>
-                                </h3>
-                                <p className="mt-5 line-clamp-3 text-sm/9">{post.description}</p>
-                            </div>
-                        </article>
-                    ))}
-                    <Image src={url} alt={alt} width={500} height={500}></Image>
+                <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:mt-16 sm:pt-16 lg:max-w-none lg:grid-cols-2 gap-4 items-center">
+                    <div className="flex flex-col space-y-6">
+                        {posts.map((post) => (
+                            <article
+                                key={post.id}
+                                className="flex max-w-xl flex-col items-start justify-between border-l border-[#8A2BE2] p-5"
+                            >
+                                <div className="group relative grow">
+                                    <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                                        <Link href={post.href}>
+                                            <span className="absolute inset-0" />
+                                            {post.title}
+                                        </Link>
+                                    </h3>
+                                    <p className="mt-5 line-clamp-3 text-sm/9">{post.description}</p>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                    <div className="flex justify-center">
+                        <Image
+                            src={url}
+                            alt={alt}
+                            width={500}
+                            height={500}
+                            className="mx-auto"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
+
     )
 }

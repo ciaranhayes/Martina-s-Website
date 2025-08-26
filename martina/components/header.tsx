@@ -7,11 +7,11 @@ import DropDown from './dropdown'
 
 const navigation = [
     { name: 'Home', href: '#' },
-    { name: <DropDown />, href: '#' },
+    { name: <DropDown colour="text-[#EFF0E2]" background="bg-[#8A2BE2]" />, href: '#' },
     { name: 'Booking', href: '#' },
     { name: 'Blog', href: '#' },
-    { name: 'About', href: '#'},
-    { name: 'Gallery', href: '#'}
+    { name: 'About', href: '#' },
+    { name: 'Gallery', href: '#' }
 ]
 
 export default function Header() {
@@ -41,10 +41,16 @@ export default function Header() {
                     </button>
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
-                    {navigation.map((item) => (
-                        <a key={item.name} href={item.href} className="text-base font-semibold">
-                            {item.name}
-                        </a>
+                    {navigation.map((item, idx) => (
+                        <div key={idx} className="flex items-center">
+                            {typeof item.name === "string" ? (
+                                <a href={item.href} className="text-base font-semibold">
+                                    {item.name}
+                                </a>
+                            ) : (
+                                item.name
+                            )}
+                        </div>
                     ))}
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">

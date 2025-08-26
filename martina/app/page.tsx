@@ -1,15 +1,18 @@
 import Header from "@/components/header"
+import HeaderFront from "@/components/headerFront"
 import ContentContainer from "@/components/items-containers"
 import ContentContainerColoured from "@/components/item-contain-coloured"
-import ContentContainerWithPhoto from "@/components/container-with-photo"
+import ContentContainerWithPhotoLeft from "@/components/container-with-photo"
+import ContentContainerWithPhotoRight from "@/components/container-photo-right"
 
 export default function Page() {
   return (
     <>
-      <Header />
+      <HeaderFront />
       <ContentContainer />
       <ContentContainerColoured />
-      <ContentContainerWithPhoto url="/photo1.jpg" alt="image"/>
+      <ContentContainerWithPhotoLeft url="/photo1.jpg" alt="image"/>
+      <ContentContainerWithPhotoRight url="/photo1.jpg" alt="image"/>
     </> 
   )
 }

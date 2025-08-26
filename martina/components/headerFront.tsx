@@ -7,7 +7,7 @@ import DropDown from './dropdown'
 
 const navigation = [
     { name: 'Home', href: '#' },
-    { name: <DropDown colour="text-[#EFF0E2]" background="bg-[#8A2BE2]" />, href: '#dropdown' },
+    { name: <DropDown colour="text-[#EFF0E2]" background="bg-purple" />, href: '#dropdown' },
     { name: 'Booking', href: '#' },
     { name: 'Blog', href: '#' },
     { name: 'About', href: '#' },
@@ -18,7 +18,7 @@ export default function HeaderFront() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <div className="bg-[url('/photo2.jpg')] bg-cover bg-bottom pt-100 text-[#EFF0E2]">
+        <div className="bg-[url('/photo2.jpg')] bg-cover bg-bottom pt-120 text-[#EFF0E2]">
             <header className="text-[#EFF0E2] absolute inset-x-0 top-0 z-50 pb-10">
                 <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
                     <div className="flex lg:flex-1 justify-center">
@@ -61,7 +61,7 @@ export default function HeaderFront() {
                 </nav>
                 <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                     <div className="absolute inset-0 z-50" />
-                    <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#8A2BE2] text-[#EFF0E2] p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                    <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-purple text-[#EFF0E2] p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                         <div className="flex items-center justify-between">
                             <a href="#" className="-m-1.5 p-1.5">
                                 <span className="sr-only">Your Company</span>

@@ -7,7 +7,7 @@ import DropDown from './dropdown'
 
 const navigation = [
     { name: 'Home', href: '#' },
-    { name: <DropDown colour="text-[#EFF0E2]" background="bg-[#8A2BE2]" />, href: '#' },
+    { name: <DropDown colour="text-[#EFF0E2]" background="bg-purple" />, href: '#' },
     { name: 'Booking', href: '#' },
     { name: 'Blog', href: '#' },
     { name: 'About', href: '#' },
@@ -17,7 +17,7 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="bg-[#8A2BE2] text-[#EFF0E2] absolute inset-x-0 top-0 z-50">
+        <header className="bg-purple text-[#EFF0E2] absolute inset-x-0 top-0 z-50">
             <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
                 <div className="flex lg:flex-1 justify-center">
                     <a href="#" className="-m-1.5 p-1.5">
@@ -60,7 +60,7 @@ export default function Header() {
             </nav>
             <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                 <div className="fixed inset-0 z-50" />
-                <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#8A2BE2] text-[#EFF0E2] p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-purple text-[#EFF0E2] p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
                         <a href="#" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>

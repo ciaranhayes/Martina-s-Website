@@ -29,7 +29,7 @@ export default function ContentContainerWithPhotoLeft({ url, alt }: { url: strin
                         {posts.map((post) => (
                             <article
                                 key={post.id}
-                                className="flex max-w-xl flex-col items-start justify-between border-l border-[#8A2BE2] p-5"
+                                className="flex max-w-xl flex-col items-start justify-between border-l border-purple p-5"
                             >
                                 <div className="group relative grow">
                                     <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">

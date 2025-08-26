@@ -19,7 +19,7 @@ export default function HeaderFront() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <div className="bg-[url('/photo2.jpg')] bg-cover bg-center h-screen text-[#EFF0E2]">
+        <div className="bg-[url('/photo2.jpg')] bg-cover bg-bottom pt-100 text-[#EFF0E2]">
             <header className="text-[#EFF0E2] absolute inset-x-0 top-0 z-50 pb-10">
                 <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
                     <div className="flex lg:flex-1 justify-center">
@@ -54,7 +54,7 @@ export default function HeaderFront() {
                 </nav>
                 <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                     <div className="absolute inset-0 z-50" />
-                    <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#EFF0E2] text-[#8A2BE2] p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                    <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#8A2BE2] text-[#EFF0E2] p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                         <div className="flex items-center justify-between">
                             <a href="#" className="-m-1.5 p-1.5">
                                 <span className="sr-only">Your Company</span>
@@ -75,15 +75,17 @@ export default function HeaderFront() {
                         </div>
                         <div className="mt-6 flow-root">
                             <div className="-my-6 divide-y divide-gray-500/10">
-                                <div className="space-y-2 py-6">
-                                    {navigation.map((item) => (
-                                        <a
-                                            key={item.name}
-                                            href={item.href}
-                                            className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50"
-                                        >
-                                            {item.name}
-                                        </a>
+                                <div className="space-y-5 py-10">
+                                    {navigation.map((item, idx) => (
+                                        <div key={idx} className="flex items-center">
+                                            {typeof item.name === "string" ? (
+                                                <a href={item.href} className="text-base font-semibold">
+                                                    {item.name}
+                                                </a>
+                                            ) : (
+                                                item.name
+                                            )}
+                                        </div>
                                     ))}
                                 </div>
                             </div>
@@ -91,19 +93,21 @@ export default function HeaderFront() {
                     </DialogPanel>
                 </Dialog>
             </header>
-            <div className="relative isolate px-6 pt-50 lg:px-8">
+            <div className="relative isolate px-6 pt-20 lg:px-8">
                 <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-                    <div className="text-center">
-                        <h1 className="text-5xl font-semibold tracking-tight text-balance sm:text-7xl">
-                            Martina Rosaria O’Connell
-                        </h1>
-                        <p className="mt-8 text-lg font-medium text-pretty sm:text-xl/8">
-                            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                            fugiat veniam occaecat.
-                        </p>
+                    <div className="relative text-center">
+                        <div className="relative z-10 px-6 py-4">
+                            <h1 className="text-5xl font-semibold tracking-tight sm:text-7xl drop-shadow-2xl">
+                                Martina Rosaria O’Connell
+                            </h1>
+                            <p className="mt-8 text-lg font-medium sm:text-xl/8 drop-shadow-2xl">
+                                Flautist - Educator - Researcher - Arts Management
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     )
 }

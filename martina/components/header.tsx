@@ -82,15 +82,17 @@ export default function Header() {
                     </div>
                     <div className="mt-6 flow-root">
                         <div className="-my-6 divide-y divide-gray-500/10">
-                            <div className="space-y-2 py-6">
-                                {navigation.map((item) => (
-                                    <a
-                                        key={item.name}
-                                        href={item.href}
-                                        className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold hover:bg-gray-50"
-                                    >
-                                        {item.name}
-                                    </a>
+                            <div className="space-y-10 py-10">
+                                {navigation.map((item, idx) => (
+                                    <div key={idx} className="flex items-center">
+                                        {typeof item.name === "string" ? (
+                                            <a href={item.href} className="text-base font-semibold">
+                                                {item.name}
+                                            </a>
+                                        ) : (
+                                            item.name
+                                        )}
+                                    </div>
                                 ))}
                             </div>
                             <div className="py-6">

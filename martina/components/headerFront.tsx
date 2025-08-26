@@ -11,7 +11,6 @@ const navigation = [
     { name: 'Booking', href: '#' },
     { name: 'Blog', href: '#' },
     { name: 'About', href: '#' },
-    { name: 'Gallery', href: '#' }
 ]
 
 
@@ -23,6 +22,14 @@ export default function HeaderFront() {
             <header className="text-[#EFF0E2] absolute inset-x-0 top-0 z-50 pb-10">
                 <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
                     <div className="flex lg:flex-1 justify-center">
+                        <a href="#" className="-m-1.5 p-1.5">
+                            <span className="sr-only">Your Company</span>
+                            <img
+                                alt=""
+                                src="/logo-cream.svg"
+                                className="h-10 w-auto"
+                            />
+                        </a>
                     </div>
                     <div className="flex lg:hidden">
                         <button

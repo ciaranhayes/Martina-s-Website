@@ -11,7 +11,6 @@ const navigation = [
     { name: 'Booking', href: '#' },
     { name: 'Blog', href: '#' },
     { name: 'About', href: '#' },
-    { name: 'Gallery', href: '#' }
 ]
 
 export default function Header() {

@@ -2,10 +2,10 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 const navigation = [
-    { name: 'Education', href: '#' },
-    { name: 'Arts Management', href: '#' },
-    { name: 'Flute', href: '#' },
-    { name: 'Research', href: '#' }
+    { name: 'Teaching', href: '/teaching' },
+    { name: 'Arts Management', href: '/arts-management' },
+    { name: 'Performance', href: '/performance-flute' },
+    { name: 'Research', href: '/research' }
 ]
 type DropDownProps = {
   colour: string;

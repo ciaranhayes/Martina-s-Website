@@ -6,11 +6,12 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import DropDown from './dropdown'
 
 const navigation = [
-    { name: 'Home', href: '#' },
+    { name: 'Home', href: '/' },
     { name: <DropDown colour="text-[#EFF0E2]" background="bg-purple" />, href: '#' },
-    { name: 'Booking', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'About', href: '#' },
+    { name: 'Enquiries', href: '/enquiries' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'About', href: '/about' },
+    { name: 'Resources', href: '/resources'}
 ]
 
 export default function Header() {

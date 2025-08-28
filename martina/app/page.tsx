@@ -3,7 +3,6 @@ import HeaderFront from "@/components/headerFront"
 import ContentContainer from "@/components/items-containers"
 import ContentContainerColoured from "@/components/item-contain-coloured"
 import ContentContainerWithPhotoLeft from "@/components/container-with-photo"
-import ContentContainerWithPhotoRight from "@/components/container-photo-right"
 import Footer from "@/components/footer"
 
 const posts = [
@@ -43,7 +42,6 @@ export default function Page() {
       <ContentContainer posts={posts} />
       <ContentContainerColoured />
       <ContentContainerWithPhotoLeft url="/photo1.jpg" alt="image"/>
-      <ContentContainerWithPhotoRight url="/photo1.jpg" alt="image"/>
       <Footer />
     </> 
   )

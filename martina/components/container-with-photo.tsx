@@ -1,49 +1,34 @@
-import Link from "next/link"
 import Image from "next/image"
-const posts = [
-    {
-        id: 1,
-        title: 'Boost your conversion rate',
-        href: '#',
-        description:
-            'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-        date: 'Mar 16, 2020',
-        datetime: '2020-03-16',
-        category: { title: 'Marketing', href: '#' },
-        author: {
-            name: 'Michael Foster',
-            role: 'Co-Founder / CTO',
-            href: '#',
-            imageUrl:
-                'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-        },
-    }
-]
 
-export default function ContentContainerWithPhotoLeft({ url, alt }: { url: string; alt: string }) {
+export default function ContentContainerWithPhotoLeft({
+    url,
+    alt,
+    title,
+    body,
+}: {
+    url: string
+    alt: string
+    title: string
+    body: string
+}) {
     return (
-        <div className="text-[#292842]">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:mt-16 sm:pt-16 lg:max-w-none lg:grid-cols-2 gap-4 items-center">
+        <div className="text-[#292842] overflow-hidden">
+            <div className="mx-auto max-w-7xl max-height-[500px] px-6 lg:px-8">
+                <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:mt-16 sm:pt-16 lg:max-w-none lg:grid-cols-2 gap-4 items-start">
                     <div className="flex flex-col space-y-6">
-                        {posts.map((post) => (
-                            <article
-                                key={post.id}
-                                className="flex max-w-xl flex-col items-start justify-between border-l border-purple p-5"
-                            >
-                                <div className="group relative grow">
-                                    <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                                        <Link href={post.href}>
-                                            <span className="absolute inset-0" />
-                                            {post.title}
-                                        </Link>
-                                    </h3>
-                                    <p className="mt-5 line-clamp-3 text-sm/9">{post.description}</p>
-                                </div>
-                            </article>
-                        ))}
+                        <article className="flex max-w-xl flex-col items-start justify-between border-l border-purple p-5 max-h-[500px] overflow-y-auto">
+                            <div className="group relative grow">
+                                <h3 className="mt-3 text-lg font-semibold text-gray-900 group-hover:text-gray-600">
+                                    <span className="absolute inset-0" />
+                                    {title}
+                                </h3>
+                                <p className="mt-5 text-sm leading-relaxed whitespace-pre-line">
+                                    {body}
+                                </p>
+                            </div>
+                        </article>
                     </div>
-                    <div className="flex justify-center">
+                    <div className="flex justify-center sticky top-20 self-start">
                         <Image
                             src={url}
                             alt={alt}
@@ -55,6 +40,5 @@ export default function ContentContainerWithPhotoLeft({ url, alt }: { url: strin
                 </div>
             </div>
         </div>
-
     )
 }
